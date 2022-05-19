@@ -1,0 +1,29 @@
+{% include "header.html" %}
+
+    <h4>These are a few of the work and study-friendly cafes in the area and a few important details to note about them if you are looking for a place to work or study</h4>
+    {% for cafe in cafes %}
+    <div class="cafe-item">
+        <img src={{cafe.img_url}} width="250" height="250">
+        <div class="description">
+            <h3>{{ cafe.name }}</h3>
+            <p><a target="_blank" href="{{ cafe.map_url }}">Get Directions</a></p>
+            <h5>Location: {{ cafe.location }}</h5>
+            <span>• Seats Available: {{ cafe.seats }}  </span>
+            <span>• Coffee Price: {{ cafe.coffee_price }}  </span>
+            {% if cafe.has_sockets: %}
+                <span>• Sockets Available  </span>
+            {% endif %}
+            {% if cafe.has_toilet: %}
+                <span>• Toilets Available  </span>
+            {% endif %}
+            {% if cafe.has_wifi: %}
+                <span>• Wi-Fi Available  </span>
+            {% endif %}
+            {% if cafe.can_take_calls: %}
+                <span>• Can take calls here  </span>
+            {% endif %}
+        </div>
+    </div>
+    {% endfor %}
+</body>
+</html>

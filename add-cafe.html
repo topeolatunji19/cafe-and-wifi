@@ -1,0 +1,7 @@
+{% include "header.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+<h2 class="add-cafe-title">Add a new cafe into the database</h2>
+<div class="cafe-form">
+    {{ wtf.quick_form(form, novalidate=True) }}
+</div>
